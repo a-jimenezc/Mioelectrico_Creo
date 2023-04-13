@@ -24,6 +24,7 @@ Revisar la carpeta documentación para más información.
 
 ## Autores
 Antonio Jiménez Caballero
+
 Otros autores....
 
 ## Licencia
