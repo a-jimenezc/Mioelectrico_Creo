@@ -4,7 +4,7 @@ La función *delay_filtering* permite leer pulsos enviados por el músculo. Adem
 Matemáticamente, la función juega con el delay intrínseco del filtro *moving average* para ser sensible únicamente a los cambios bruscos en la señal. Esto permite que el motor pueda ser controlado con pulsos del músculo, a la vez que se evita el ruido.
 
 
-void delayFiltering(int milliseconds){
+''' void delayFiltering(int milliseconds){
   int milliseconds_2 = (1000/sample_interval)*milliseconds; //float to int
   for(int i=0; i < milliseconds_2; i++){//delay filtrando
        int Value= analogRead(SensorEmgInputPin);
@@ -23,7 +23,7 @@ void delayFiltering(int milliseconds){
        Serial.println(Threshold);
        delayMicroseconds(sample_interval);//debe coincidir con SAMPLE_FREQ
   }   
-}
+}'''
 
 
 Descripción:
