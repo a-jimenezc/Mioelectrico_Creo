@@ -6,7 +6,7 @@ Matemáticamente, la función juega con el delay intrínseco del filtro *moving 
 
 ´´´C
 
-void delayFiltering(int milliseconds){
+    void delayFiltering(int milliseconds){
   int milliseconds_2 = (1000/sample_interval)*milliseconds; //float to int
   for(int i=0; i < milliseconds_2; i++){//delay filtrando
        int Value= analogRead(SensorEmgInputPin);
