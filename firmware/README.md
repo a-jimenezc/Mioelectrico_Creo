@@ -4,22 +4,22 @@ Este código de Arduino está diseñado para habilitar el control mioeléctrico 
 
 Para usar este código, sigue los siguientes pasos:
 
-# Paso 1: Configuración del Hardware
+### Paso 1: Configuración del Hardware
 
 Conecta el sensor EMG analógico a la placa de Arduino. El cable de señal del sensor debe conectarse al pin A7 de Arduino (o cambia el valor de "SensorEmgInputPin" al número de pin apropiado en el código).
 Conecta el motor a los pines apropiados de Arduino para el control del motor. El motor se controla mediante señales PWM, así que asegúrate de conectarlo a los pines apropiados con capacidad de PWM (por ejemplo, D9 y D10).
 
-# Paso 2: Configuración del Software
+### Paso 2: Configuración del Software
 
 Instala las bibliotecas "movingAvg" y "EMGFilters" en tu entorno de desarrollo de Arduino. Estas bibliotecas son necesarias para que el código funcione correctamente.
 Copia y pega el código proporcionado en tu entorno de desarrollo de Arduino.
 
-# Paso 3: Configuración
+### Paso 3: Configuración
 
 Configura los parámetros en el código para adaptarlos a tus requisitos específicos. Por ejemplo, puedes ajustar la frecuencia de muestreo, la frecuencia de rechazo, el intervalo de muestreo, los parámetros de control del motor y los valores de umbral según tus necesidades.
 Asegúrate de leer y entender la documentación de las bibliotecas "movingAvg" y "EMGFilters" para configurarlas y utilizarlas correctamente en tu código.
 
-# Paso 4: Carga y Ejecución
+### Paso 4: Carga y Ejecución
 
 Carga el código en tu placa de Arduino.
 Abre el Monitor Serie en tu entorno de desarrollo de Arduino para ver la salida del código.
