@@ -7,12 +7,12 @@ Matemáticamente, la función juega con el delay intrínseco del filtro *moving 
 ´´´C
 
     void delayFiltering(int milliseconds){
-  int milliseconds_2 = (1000/sample_interval)*milliseconds; //float to int
-  for(int i=0; i < milliseconds_2; i++){//delay filtrando
-       int Value= analogRead(SensorEmgInputPin);
-       int DataAfterFilter = myFilter.update(Value);
-       unsigned  long envlope = sq(DataAfterFilter);
-       unsigned  long mov_avg = movAvg_myo.reading(envlope);
+      int milliseconds_2 = (1000/sample_interval)*milliseconds; //float to int
+      for(int i=0; i < milliseconds_2; i++){//delay filtrando
+           int Value= analogRead(SensorEmgInputPin);
+           int DataAfterFilter = myFilter.update(Value);
+           unsigned  long envlope = sq(DataAfterFilter);
+           unsigned  long mov_avg = movAvg_myo.reading(envlope);
 
        if(Threshold < 60){Threshold = aux_trh.reading(trsh_60);} //treshold dinámico
        else if(Threshold < prim_int ){Threshold = aux_trh.reading(mov_avg*(1+(funParametro_1-pow(Threshold,1/30))));}
