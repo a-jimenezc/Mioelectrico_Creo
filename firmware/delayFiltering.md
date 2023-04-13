@@ -3,9 +3,6 @@ La función *delay_filtering* permite leer pulsos enviados por el músculo. Adem
 
 Matemáticamente, la función juega con el delay intrínseco del filtro *moving average* para ser sensible únicamente a los cambios bruscos en la señal. Esto permite que el motor pueda ser controlado con pulsos del músculo, a la vez que se evita el ruido.
 
-
-´´´C
-
     void delayFiltering(int milliseconds){
       int milliseconds_2 = (1000/sample_interval)*milliseconds; //float to int
       for(int i=0; i < milliseconds_2; i++){//delay filtrando
@@ -14,21 +11,18 @@ Matemáticamente, la función juega con el delay intrínseco del filtro *moving 
            unsigned  long envlope = sq(DataAfterFilter);
            unsigned  long mov_avg = movAvg_myo.reading(envlope);
 
-       if(Threshold < 60){Threshold = aux_trh.reading(trsh_60);} //treshold dinámico
-       else if(Threshold < prim_int ){Threshold = aux_trh.reading(mov_avg*(1+(funParametro_1-pow(Threshold,1/30))));}
-       else if(Threshold < seg_int ){Threshold = aux_trh.reading(mov_avg*(1+(funParametro_2-pow(Threshold,1/30))));} 
-       else{Threshold = aux_trh.reading(mov_avg*(1+(1.2-pow(Threshold,1/30))));}
+           if(Threshold < 60){Threshold = aux_trh.reading(trsh_60);} //treshold dinámico
+           else if(Threshold < prim_int ){Threshold = aux_trh.reading(mov_avg*(1+(funParametro_1-pow(Threshold,1/30))));}
+           else if(Threshold < seg_int ){Threshold = aux_trh.reading(mov_avg*(1+(funParametro_2-pow(Threshold,1/30))));} 
+           else{Threshold = aux_trh.reading(mov_avg*(1+(1.2-pow(Threshold,1/30))));}
 
-       Serial.print("absuared Data: ");
-       Serial.println(mov_avg);
-       Serial.print("threshold: ");
-       Serial.println(Threshold);
+           Serial.print("absuared Data: ");
+           Serial.println(mov_avg);
+           Serial.print("threshold: ");
+           Serial.println(Threshold);
        delayMicroseconds(sample_interval);//debe coincidir con SAMPLE_FREQ
-  }   
-}
-
-´´´
-
+      }   
+    }
 
 Descripción:
 
