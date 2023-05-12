@@ -31,6 +31,7 @@ Otros autores....
 Por definir.
 
 ## Contribuciones
+Luis Villafani
 Otros contribuyentes....
 
 Se aceptan contribuciones al proyecto. Por favor, crea un "pull request" con tus propuestas.
